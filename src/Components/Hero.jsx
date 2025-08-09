@@ -23,20 +23,28 @@ const Hero = () => {
             </div>
           </div>
           <div className=" bg-white px-3 py-2 my-6 rounded-xl w-80">
-            <form action="" className="flex justify-between">
+            <form action="" className="flex ">
               <input
                 type="text"
                 name=""
                 id=""
                 placeholder="What are you looking for?"
-                
-                className="outline-none"
+                className="outline-none w-75"
               />
               <p className="bg-[#C1DCDC] py-1 px-2 rounded-xl">O</p>
             </form>
           </div>
         </div>
-        <div className="bg-black h-70 w-70 rounded-l-full rounded-tr-full"></div>
+        <div className="w-100 my-38">
+          <img src="src\assets\arrow1-removebg-preview.png" alt="" />
+        </div>
+        <div className="bg-black h-95 w-98 my-13 rounded-l-full rounded-tr-full flex justify-around items-end">
+          <img
+            src="src\assets\bonsai-6790367_1280-removebg-preview.png"
+            alt=""
+            className="h-190"
+          />
+        </div>
       </div>
     </div>
   );
