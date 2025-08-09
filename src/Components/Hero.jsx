@@ -3,7 +3,7 @@ import React from "react";
 const Hero = () => {
   return (
     <div>
-      <div className="flex justify-between bg-[#C1DCDC] my-4 mx-20 p-8 rounded-2xl h-120">
+      <div className="flex justify-between bg-[#C1DCDC] my-4 mx-30 p-8 rounded-2xl h-120">
         <div>
           <p className="text-5xl font-extrabold">
             Buy your <br />
