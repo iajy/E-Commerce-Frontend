@@ -19,7 +19,7 @@ const BestSelling = () => {
         </div>
         <div className="w-50 flex flex-col gap-3">
           <img
-            src="nature-7595625_1280.jpg"
+            src="/nature-7595625_1280.jpg"
             alt=""
             className="rounded-2xl shadow-gray-600 shadow-2xl"
           />
@@ -30,7 +30,7 @@ const BestSelling = () => {
         </div>
         <div className="w-50 flex flex-col gap-3">
           <img
-            src="src\assets\pigmyweeds-6947384_1280.jpg"
+            src="/pigmyweeds-6947384_1280.jpg"
             alt=""
             className="rounded-2xl shadow-gray-600 shadow-2xl"
           />
@@ -41,7 +41,7 @@ const BestSelling = () => {
         </div>
         <div className="w-50 flex flex-col gap-3">
           <img
-            src="src\assets\plant-4073520_1280.jpg"
+            src="/plant-4073520_1280.jpg"
             alt=""
             className="rounded-2xl shadow-gray-600 shadow-2xl"
           />

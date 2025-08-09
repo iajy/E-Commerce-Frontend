@@ -36,11 +36,11 @@ const Hero = () => {
           </div>
         </div>
         <div className="w-100 my-38">
-          <img src="src\assets\arrow1-removebg-preview.png" alt="" />
+          <img src="/arrow1-removebg-preview.png" alt="" />
         </div>
         <div className="bg-black h-95 w-98 my-13 rounded-l-full rounded-tr-full flex justify-around items-end">
           <img
-            src="src\assets\bonsai-6790367_1280-removebg-preview.png"
+            src="/bonsai-6790367_1280-removebg-preview.png"
             alt=""
             className="h-190"
           />
