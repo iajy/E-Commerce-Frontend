@@ -3,20 +3,20 @@ import React from "react";
 const Hero = () => {
   return (
     <div>
-      <div className="flex justify-between bg-[#C1DCDC] my-4 mx-10 p-8 rounded-2xl h-dvh/2">
+      <div className="flex justify-between bg-[#C1DCDC] my-4 mx-20 p-8 rounded-2xl h-120">
         <div>
-          <p className="text-3xl font-extrabold">
+          <p className="text-5xl font-extrabold">
             Buy your <br />
             dream plants
           </p>
           <div className="flex items-center gap-10 my-2">
             <div>
-              <p className="text-2xl">50+</p>
+              <p className="text-3xl">50+</p>
               <p>Plant Species</p>
             </div>
             <hr className="border border-gray-500 h-10" />
             <div>
-              <p className="text-2xl">100+</p>
+              <p className="text-3xl">100+</p>
               {/* add plant id count  */}
               <p>Customers</p>
               {/* add customer id count */}

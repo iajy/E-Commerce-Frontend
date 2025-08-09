@@ -3,7 +3,7 @@ import React from "react";
 const About = () => {
   return (
     <div>
-      <div className="my-8 mx-10 flex flex-col gap-10">
+      <div className="my-8 mx-20 flex flex-col gap-10">
         <div className="flex flex-col items-center">
           <h2 className="text-2xl font-bold">About Us</h2>
           <p className="text-sm text-gray-600">
@@ -11,19 +11,27 @@ const About = () => {
           </p>
         </div>
         <div className="flex justify-between">
-          <div className="flex flex-col items-center">
+          <div className="text-center flex flex-col items-center gap-2">
             <button className="bg-[#C1DCDC] rounded-full px-4 py-3">O</button>
             <h2 className="font-bold">Large Assortment</h2>
-            <p className="text-sm text-gray-600">we offer many different types of products <br /> with fewer variations in each category.</p>
+            <p className="text-sm text-gray-600">
+              we offer many different types of products <br className="hidden md:block"/> with fewer variations in
+              each category.
+            </p>
           </div>
-         <div className="flex flex-col items-center">
+          <div className="text-center flex flex-col items-center gap-2">
             <button className="bg-[#C1DCDC] rounded-full px-4 py-3">O</button>
-            <h2 className="font-bold">Large Assortment</h2>
-            <p className="text-sm text-gray-600">we offer many different types of products <br /> with fewer variations in each category.</p>
-          </div><div className="flex flex-col items-center">
+            <h2 className="font-bold">Fast & Free Shipping</h2>
+            <p className="text-sm text-gray-600">
+              4-dqays or less delivery time, free shipping <br className="hidden md:block"/> and an expedited delivery option.
+            </p>
+          </div>
+          <div className="text-center flex flex-col items-center gap-2">
             <button className="bg-[#C1DCDC] rounded-full px-4 py-3">O</button>
-            <h2 className="font-bold">Large Assortment</h2>
-            <p className="text-sm text-gray-600">we offer many different types of products <br /> with fewer variations in each category.</p>
+            <h2 className="font-bold">24/7 Support</h2>
+            <p className="text-sm text-gray-600">
+              answers to any business related inquiry <br className="hidden md:block"/> 24/7 and in real-time.
+            </p>
           </div>
         </div>
       </div>

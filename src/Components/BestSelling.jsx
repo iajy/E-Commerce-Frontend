@@ -3,7 +3,7 @@ import React from "react";
 const BestSelling = () => {
   return (
     <div>
-      <div className="my-8 mx-10 flex justify-between">
+      <div className="my-20 mx-20 flex justify-between">
         <div className="flex flex-col gap-2">
           <h2 className="font-bold text-xl">
             Best Selling <br /> Plants
