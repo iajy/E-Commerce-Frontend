@@ -1,9 +1,11 @@
 import React from "react";
+import { IoMdSearch } from "react-icons/io";
+import NavBar from "./NavBar";
 
 const Hero = () => {
   return (
     <div>
-      <div className="flex justify-between bg-[#C1DCDC] my-4 mx-30 p-8 rounded-2xl h-120">
+      <div className="flex justify-between bg-[#C1DCDC] my-24 mx-30 p-8 rounded-2xl h-120">
         <div>
           <p className="text-5xl font-extrabold">
             Buy your <br />
@@ -31,7 +33,9 @@ const Hero = () => {
                 placeholder="What are you looking for?"
                 className="outline-none w-75"
               />
-              <p className="bg-[#C1DCDC] py-1 px-2 rounded-xl">O</p>
+              <p className="bg-[#C1DCDC] py-2 px-2 rounded-xl">
+                <IoMdSearch className="hover:text-blue-900" />
+              </p>
             </form>
           </div>
         </div>

@@ -5,10 +5,10 @@ const BestSelling = () => {
     <div>
       <div className="h-100 my-20 mx-30 flex justify-between ">
         <div className="flex flex-col gap-3">
-          <h2 className="font-bold text-2xl">
+          <h2 className="font-bold text-3xl">
             Best Selling <br /> Plants
           </h2>
-          <p className="text-sm text-gray-600">
+          <p className="text-gray-600">
             Easiest way to <br />
             healthy life by buying <br />
             your favorite plants
