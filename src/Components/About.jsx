@@ -6,7 +6,7 @@ import { SlCallOut } from "react-icons/sl";
 const About = () => {
   return (
     <div>
-      <div className="my-20 mx-30 flex flex-col gap-10">
+      <div className="my-20 md:mx-30 flex flex-col gap-10">
         <div className="flex flex-col items-center">
           <h2 className="text-2xl font-bold">About Us</h2>
           <p className="text-sm text-gray-600">
