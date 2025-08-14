@@ -8,7 +8,7 @@ const Categories = () => {
         <p className="text-gray-600">Find what you are looking for</p>
       </div>
       <div className="flex bg-[#C1DCDC] justify-between items-center px-30 py-5 h-130">
-        <div>
+        <div className="hidden md:block">
           <div className="w-65 flex flex-col -my-74">
             <img
               src="amaryllis-1984899_1280.jpg"
@@ -31,7 +31,7 @@ const Categories = () => {
             Explore &rarr;
           </button>
         </div>
-        <div>
+        <div className="hidden md:block">
           <div className="w-65 flex flex-col -my-74">
             <img
               src="ornamental-flowerpot-5429622_1280.jpg"

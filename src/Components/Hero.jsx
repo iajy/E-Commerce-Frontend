@@ -24,14 +24,14 @@ const Hero = () => {
               {/* add customer id count */}
             </div>
           </div>
-          <div className=" bg-white px-3 py-2 my-6 rounded-xl w-80">
-            <form action="" className="flex ">
+          <div className="bg-white px-3 py-2 my-6 rounded-xl ">
+            <form action="" className="flex flex-row justify-between">
               <input
                 type="text"
                 name=""
                 id=""
                 placeholder="What are you looking for?"
-                className="outline-none w-75"
+                className="outline-none"
               />
               <p className="bg-[#C1DCDC] py-2 px-2 rounded-xl">
                 <IoMdSearch className="hover:text-blue-900" />
@@ -39,10 +39,10 @@ const Hero = () => {
             </form>
           </div>
         </div>
-        <div className="w-100 my-38">
+        <div className="hidden md:block w-100 my-38">
           <img src="/arrow1-removebg-preview.png" alt="" />
         </div>
-        <div className="bg-black h-95 w-98 my-13 rounded-l-full rounded-tr-full flex justify-around items-end">
+        <div className="hidden bg-black h-95 w-98 my-13 rounded-l-full rounded-tr-full md:flex justify-around items-end">
           <img
             src="/bonsai-6790367_1280-removebg-preview.png"
             alt=""

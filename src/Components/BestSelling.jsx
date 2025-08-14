@@ -3,7 +3,7 @@ import React from "react";
 const BestSelling = () => {
   return (
     <div>
-      <div className="h-100 my-20 mx-30 flex justify-between ">
+      <div className="h-100 mx-30 flex justify-between ">
         <div className="flex flex-col gap-3">
           <h2 className="font-bold text-3xl">
             Best Selling <br /> Plants
@@ -28,7 +28,7 @@ const BestSelling = () => {
             <p>Prize</p>
           </div>
         </div>
-        <div className="w-50 md:flex flex-col gap-3 hidden ">
+        <div className="w-50 md:flex flex-col gap-3 hidden">
           <img
             src="/pigmyweeds-6947384_1280.jpg"
             alt=""
