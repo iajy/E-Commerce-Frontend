@@ -7,7 +7,7 @@ const Categories = () => {
         <h2 className="text-2xl font-bold">Categories</h2>
         <p className="text-gray-600">Find what you are looking for</p>
       </div>
-      <div className="flex bg-[#C1DCDC] justify-between items-center px-30 py-5 h-130">
+      <div className="flex bg-[#C1DCDC] md:justify-between justify-around items-center px-30 py-5 h-130">
         <div className="hidden md:block">
           <div className="w-65 flex flex-col -my-74">
             <img
