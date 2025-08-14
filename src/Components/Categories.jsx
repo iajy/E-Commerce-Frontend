@@ -3,11 +3,11 @@ import React from "react";
 const Categories = () => {
   return (
     <div className=" flex flex-col gap-y-6 my-10">
-      <div className="text-center my-10">
+      <div className="text-center md:my-10">
         <h2 className="text-2xl font-bold">Categories</h2>
         <p className="text-gray-600">Find what you are looking for</p>
       </div>
-      <div className="flex bg-[#C1DCDC] md:justify-between justify-around items-center px-30 py-5 h-130">
+      <div className="flex bg-[#C1DCDC] md:justify-between justify-around items-center  py-5 h-130">
         <div className="hidden md:block">
           <div className="w-65 flex flex-col -my-74">
             <img
@@ -19,7 +19,7 @@ const Categories = () => {
           </div>
         </div>
 
-        <div className="w-65 flex flex-col gap-2 items-center">
+        <div className="md:w-65 w-65  flex flex-col gap-2 items-center">
           <img
             src="greenhouse-5095328_1280.jpg"
             alt=""

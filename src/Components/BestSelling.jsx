@@ -17,7 +17,7 @@ const BestSelling = () => {
             See more &rarr;
           </button>
         </div>
-        <div className="w-50 flex flex-col gap-3">
+        <div className="md:w-50 w-40  flex flex-col gap-3">
           <img
             src="/nature-7595625_1280.jpg"
             alt=""
