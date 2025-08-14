@@ -5,10 +5,10 @@ import { IoCartOutline } from "react-icons/io5";
 
 const NavBar = () => {
   return (
-    <header className="fixed hidden w-full z-50 bg-white md:flex justify-between items-center py-5 px-10 shadow-lg ">
+    <header className="fixed  w-full z-50 bg-white flex justify-between items-center py-5 md:px-10 px-5 shadow-lg ">
       <div className="flex items-center gap-15">
         <p className="text-4xl font-extrabold" >PlantsLand</p>
-        <ul className="flex gap-10">
+        <ul className=" hidden md:flex gap-10">
           <li className="hover:text-[#C1dcdc]">Home</li>
           <li className="hover:text-[#C1dcdc]">Products</li>
           <li className="hover:text-[#C1dcdc]">Contact</li>
