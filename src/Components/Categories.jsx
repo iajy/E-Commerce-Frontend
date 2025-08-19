@@ -7,11 +7,12 @@ const Categories = () => {
         <h2 className="text-2xl font-bold">Categories</h2>
         <p className="text-gray-600">Find what you are looking for</p>
       </div>
-      <div className="flex bg-[#C1DCDC] md:justify-between justify-around items-center  py-5 h-130">
+      <div className="flex bg-[#C1DCDC]  justify-around items-center  py-5 h-130">
         <div className="hidden md:block">
           <div className="w-65 flex flex-col -my-74">
+            {/* amaryllis-1984899_1280.jpg */}
             <img
-              src="amaryllis-1984899_1280.jpg"
+            src="https://cdn.pixabay.com/photo/2017/01/16/18/45/amaryllis-1984899_1280.jpg"
               alt=""
               className=" rounded-xl"
             />

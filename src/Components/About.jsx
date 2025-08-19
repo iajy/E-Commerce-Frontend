@@ -13,13 +13,13 @@ const About = () => {
             Order now and appreciate the beauty of nature
           </p>
         </div>
-        <div className="flex justify-between">
+        <div className=" gap-y-4 flex justify-between">
           <div className="text-center flex flex-col items-center gap-3">
             <button className="text-2xl bg-[#C1DCDC] rounded-full px-4 py-4">
               <PiPottedPlant />
             </button>
             <h2 className="font-bold">Large Assortment</h2>
-            <p className="text-sm text-gray-600">
+            <p className="hidden md:block text-sm text-gray-600">
               we offer many different types of products
               <br className="hidden md:block" /> with fewer variations in each
               category.
@@ -30,7 +30,7 @@ const About = () => {
               <BsBoxSeam />
             </button>
             <h2 className="font-bold">Fast & Free Shipping</h2>
-            <p className="text-sm text-gray-600">
+            <p className="hidden md:block text-sm text-gray-600">
               4-dqays or less delivery time, free shipping{" "}
               <br className="hidden md:block" /> and an expedited delivery
               option.
@@ -41,8 +41,8 @@ const About = () => {
               <SlCallOut />
             </button>
             <h2 className="font-bold">24/7 Support</h2>
-            <p className="text-sm text-gray-600">
-              answers to any business related inquiry{" "}
+            <p className="hidden md:block text-sm text-gray-600">
+              answers to any business related inquiry
               <br className="hidden md:block" /> 24/7 and in real-time.
             </p>
           </div>
