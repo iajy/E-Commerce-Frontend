@@ -34,8 +34,9 @@ const Categories = () => {
         </div>
         <div className="hidden md:block">
           <div className="w-65 flex flex-col -my-74">
+            {/* ornamental-flowerpot-5429622_1280.jpg */}
             <img
-              src="ornamental-flowerpot-5429622_1280.jpg"
+              src="https://cdn.pixabay.com/photo/2021/09/22/12/02/monstera-6646644_1280.jpg"
               alt=""
               className=" rounded-xl"
             />
