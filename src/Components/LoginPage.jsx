@@ -61,7 +61,7 @@ const LoginPage = ({ onExit }) => {
           </button>
           
         </form>
-        <div className="flex justify-around"><p>Don’t have an account? <a href="" className="text-blue-600">Sign up</a></p></div>
+        <div className="flex justify-around"><p>Already have an account ? <a href="" className="text-blue-600">Login</a></p></div>
       </div>
     </div>
   );
