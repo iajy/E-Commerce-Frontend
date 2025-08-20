@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import { CgProfile } from "react-icons/cg";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import { IoCartOutline } from "react-icons/io5";
-import LoginPage from "./LoginPage";
+import SignUpPage from "./SignUpPage";
 
 const NavBar = () => {
-  const [login, setLogin] = useState(false);
+  const [signUp, setSignUp] = useState(false);
 
-  const handleLogin = () => {
-    setLogin((prev)=>!prev);
+  const handleSignUp = () => {
+    setSignUp((prev)=>!prev);
   };
   return (
     <header className="fixed  w-full z-50 bg-white flex justify-between items-center py-5 md:px-10 px-5 shadow-lg ">
@@ -25,14 +25,14 @@ const NavBar = () => {
           <IoCartOutline className="hover:text-[#C1dcdc]" />
         </p>
         <p>
-          <CgProfile onClick={handleLogin} className="hover:text-[#C1dcdc]" />
+          <CgProfile onClick={handleSignUp} className="hover:text-[#C1dcdc]" />
         </p>
         <p>|</p>
         <p>
           <HiOutlineMenuAlt3 className="hover:text-[#C1dcdc]" />
         </p>
       </div>
-      {login && <LoginPage onExit={handleLogin} />}
+      {signUp && <SignUpPage onExit={handleSignUp} />}
     </header>
   );
 };

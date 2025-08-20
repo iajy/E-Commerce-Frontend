@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { IoCloseOutline } from "react-icons/io5";
 
-const LoginPage = ({ onExit }) => {
+const SignUpPage = ({ onExit }) => {
   const [password, setPassword] = useState("");
   const [vPassword, setVPassword] = useState("");
 
@@ -61,10 +61,10 @@ const LoginPage = ({ onExit }) => {
           </button>
           
         </form>
-        <div className="flex justify-around"><p>Already have an account ? <a href="" className="text-blue-600">Login</a></p></div>
+        <div className="flex justify-around"><p>Already have an account ? <a  className="text-blue-600 cursor-pointer">Login</a></p></div>
       </div>
     </div>
   );
 };
 
-export default LoginPage;
+export default SignUpPage;
