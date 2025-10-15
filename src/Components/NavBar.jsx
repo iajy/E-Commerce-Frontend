@@ -26,14 +26,13 @@ const NavBar = () => {
       </div>
       <div className="flex items-center gap-8 text-lg">
         {/* <button > */}
-          <IoCartOutline  onClick={()=>navigate("/mycart")} className="hover:text-[#C1dcdc]" />
+          <IoCartOutline  onClick={()=>navigate("/mycart")} className="hover:text-[#C1dcdc] hidden md:flex" />
         {/* </button> */}
         <p>
           <CgProfile onClick={()=>setView("login")} className="hover:text-[#C1dcdc]" />
         </p>
-        <p>|</p>
         <p>
-          <HiOutlineMenuAlt3 className="hover:text-[#C1dcdc]" />
+          <HiOutlineMenuAlt3 className="hover:text-[#C1dcdc] md:hidden" />
         </p>
       </div>
       {view==="login" && <LoginPage onExit={()=>setView("")} onSignUp={()=>setView("signUp")}/>}
