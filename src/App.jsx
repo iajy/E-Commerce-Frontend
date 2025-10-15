@@ -1,23 +1,22 @@
 import React from "react";
+import { Route,  Routes } from "react-router-dom";
+import { Toaster } from "react-hot-toast";
+import Home from "./Components/Home";
+import MyCart from "./Components/MyCart";
 import NavBar from "./Components/NavBar";
-import Hero from "./Components/Hero";
-import BestSelling from "./Components/BestSelling";
-import About from "./Components/About";
-import Categories from "./Components/Categories";
-import Feedback from "./Components/Feedback";
-import Footer from "./Components/Footer";
+import Products from "./Components/Products";
 
 const App = () => {
   return (
-    <div className="flex flex-col">
+    <div>
+      <Toaster />
       <NavBar />
-      <Hero />
-      <BestSelling />
-      <About />
-      <Categories />
-      <Feedback />
-      <Footer />
-    </div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/mycart" element={<MyCart />} />
+        <Route path="products" element={<Products/>}/>
+      </Routes>
+   </div>
   );
 };
 
