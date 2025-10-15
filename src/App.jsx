@@ -1,5 +1,5 @@
 import React from "react";
-import { Route,  Routes } from "react-router-dom";
+import {HashRouter as Route,  Routes } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 import Home from "./Components/Home";
 import MyCart from "./Components/MyCart";
