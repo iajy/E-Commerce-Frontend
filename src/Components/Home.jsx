@@ -18,7 +18,6 @@ const Home = () => {
       <About />
       <Categories />
       <Feedback />
-      <Footer />
     </div>
   );
 };
