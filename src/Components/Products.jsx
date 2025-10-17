@@ -3,7 +3,6 @@ import SearchBar from "./SearchBar";
 import OnGoingOffer from "./OnGoingOffer";
 import MostSellingProducts from "./MostSellingProducts";
 import ProductsForU from "./ProductsForU";
-import Footer from "./Footer";
 
 
 const Products = () => {
@@ -13,7 +12,6 @@ const Products = () => {
       <OnGoingOffer/>
       <MostSellingProducts/>
       <ProductsForU  />
-      
     </div>
   );
 };

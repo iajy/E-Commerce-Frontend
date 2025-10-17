@@ -39,19 +39,19 @@ const OnGoingOffer = () => {
             {offerPlants.map((plant) => (
               <div
                 key={plant.id}
-                className="bg-[#C1DCDC] min-w-1/2 rounded-2xl relative p-4  cursor-pointer"
+                className="bg-[#C1DCDC] md:min-w-1/2 min-w-5/6 rounded-2xl relative p-4  cursor-pointer"
               >
-                <h3 className="absolute right-1/4 top-1/2 text-xl ">
+                <h3 className="absolute md:right-1/4 md:top-1/2  bottom-1 right-0.5 text-right text-xl ">
                   <p>
-                    <span className="text-2xl font-semibold">{plant.plantName}</span>
+                    <span className="md:text-2xl font-semibold">{plant.plantName}</span>
                     <br />
-                    <span className="text-3xl font-bold">{plant.offer}% off</span>
+                    <span className="md:text-3xl font-bold">{plant.offer}% off</span>
                   </p>
                 </h3>
                 <img
                 src={plant.image?.img1}
                   alt=""
-                  className="rounded-2xl right-2 bottom-2 object-cover w-1/4 h-65  "
+                  className="rounded-2xl right-2 bottom-2 object-cover md:w-1/4 w-3/4 md:h-65 h-50  "
                 />
               </div>
             ))}
