@@ -1,80 +1,60 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { FaAngleRight } from "react-icons/fa";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
+import axios from "axios";
 
 const OnGoingOffer = () => {
+  const [offerPlants, setOfferPlants] = useState([]);
 
-    
+  useEffect(() => {
+    const fetchOffer = async () => {
+      try {
+        const res = await axios.get("http://localhost:8080/plantbytopoffer");
+        setOfferPlants(res.data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    fetchOffer();
+  }, []);
   return (
     <div>
-      <h1 className="text-3xl font-extrabold p-4">
-        Offers on going Plants
-      </h1>
-
+      <div className="py-4">
+        <h1 className="text-3xl font-extrabold ">Offers on going</h1>
+        <h1>Fresh Deals Blooming !</h1>
+      </div>
       <div className="flex items-center gap-2">
         {/* Horizontal scroll container */}
         <div className="overflow-x-auto scrollbar-hide rounded-2xl w-full">
           <motion.div
             className="flex space-x-4"
-            animate={{ x: ["0%", "-100%"] }} 
+            animate={{ x: ["0%", "-100%"] }}
             transition={{
               duration: 15,
               repeat: Infinity,
-              ease:"linear",
+              ease: "linear",
             }}
           >
-            {/* Card 1 */}
-            <div className="bg-[#C1DCDC] min-w-1/2 rounded-2xl relative p-4  cursor-pointer">
-              <h3 className="absolute right-1/2 top-1/2 text-xl font-black">
-                {/* <h1>plant name</h1>
-                <h2 className="text-3xl">50% 0ff</h2> */}
-              </h3>
-              <img
-                src="https://www.rollingnature.com/cdn/shop/products/91OnuvqehtL._SL1500.jpg?v=1580193752"
-                alt=""
-                className="w-1/4 rounded-2xl right-2 bottom-2"
-              />
-            </div>
-
-            {/* Card 2 */}
-            <div className="bg-[#C1DCDC] min-w-1/2 rounded-2xl relative p-4  cursor-pointer">
-              <h3 className="absolute right-1/2 top-1/2 text-xl font-black">
-                {/* <h1>plant name</h1>
-                <h2 className="text-3xl">40% 0ff</h2> */}
-              </h3>
-              <img
-                src="https://www.rollingnature.com/cdn/shop/products/91OnuvqehtL._SL1500.jpg?v=1580193752"
-                alt=""
-                className="w-1/4 rounded-2xl right-2 bottom-2"
-              />
-            </div>
-
-            {/* Card 3 */}
-            <div className="bg-[#C1DCDC] min-w-1/2 rounded-2xl relative p-4  cursor-pointer">
-              <h3 className="absolute right-1/2 top-1/2 text-xl font-black">
-                {/* <h1>plant name</h1>
-                <h2 className="text-3xl">35% 0ff</h2> */}
-              </h3>
-              <img
-                src="https://www.rollingnature.com/cdn/shop/products/91OnuvqehtL._SL1500.jpg?v=1580193752"
-                alt=""
-                className="w-1/4 rounded-2xl right-2 bottom-2"
-              />
-            </div>
-
-            {/* Card 4 */}
-            <div className="bg-[#C1DCDC] min-w-1/2 rounded-2xl relative p-4 cursor-pointer">
-              <h3 className="absolute right-1/2 top-1/2 text-xl font-black">
-                {/* <h1>plant name</h1>
-                <h2 className="text-3xl">30% 0ff</h2> */}
-              </h3>
-              <img
-                src="https://www.rollingnature.com/cdn/shop/products/91OnuvqehtL._SL1500.jpg?v=1580193752"
-                alt=""
-                className="w-1/4 rounded-2xl right-2 bottom-2"
-              />
-            </div>
+            {offerPlants.map((plant) => (
+              <div
+                key={plant.id}
+                className="bg-[#C1DCDC] min-w-1/2 rounded-2xl relative p-4  cursor-pointer"
+              >
+                <h3 className="absolute right-1/4 top-1/2 text-xl ">
+                  <p>
+                    <span className="text-2xl font-semibold">{plant.plantName}</span>
+                    <br />
+                    <span className="text-3xl font-bold">{plant.offer}% off</span>
+                  </p>
+                </h3>
+                <img
+                src={plant.image?.img1}
+                  alt=""
+                  className="rounded-2xl right-2 bottom-2 object-cover w-1/4 h-65  "
+                />
+              </div>
+            ))}
           </motion.div>
         </div>
 

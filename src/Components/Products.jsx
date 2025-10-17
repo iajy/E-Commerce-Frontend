@@ -12,7 +12,7 @@ const Products = () => {
       <SearchBar className="m-3" />
       <OnGoingOffer/>
       <MostSellingProducts/>
-      <ProductsForU/>
+      <ProductsForU  />
       
     </div>
   );

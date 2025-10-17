@@ -6,22 +6,27 @@ import { motion } from "framer-motion";
 const MostSellingProducts = () => {
   return (
     <div className="my-20">
-     <div className="flex justify-end"> <h1 className="text-3xl font-extrabold px-12 py-4">
-        Most Selling Products
-      </h1></div>
+      <div className="flex flex-col items-end px-8 py-4">
+        {" "}
+        <h1 className="text-3xl font-extrabold">
+          Most Selling Products
+        </h1>
+        <h2>Our Customers’ Favorites!</h2>
+      </div>
 
       <div className="flex items-center gap-2">
         {/* Horizontal scroll container */}
         <div className="overflow-x-auto scrollbar-hide rounded-2xl w-full">
-          <motion.div 
-        //   animate={{x:["0%","-100%"]}}
-        //   transition={{
-        //     duration:15,
-        //     repeat:Infinity,
-        //     ease:"linear"
-        //   }}
-          
-          className="flex space-x-4 ">
+          <motion.div
+            //   animate={{x:["0%","-100%"]}}
+            //   transition={{
+            //     duration:15,
+            //     repeat:Infinity,
+            //     ease:"linear"
+            //   }}
+
+            className="flex space-x-4 "
+          >
             {/* Card 1 */}
             <div className="bg-[#C1DCDC] min-w-1/2 rounded-2xl relative p-4  cursor-pointer">
               <h3 className="absolute right-1/2 top-1/2 text-xl font-black">
