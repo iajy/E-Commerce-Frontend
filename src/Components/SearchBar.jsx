@@ -8,7 +8,7 @@ const SearchBar = () => {
         toast.success("search")
     }
   return (
-    <div className="flex justify-center p-4">
+    <div className="flex justify-center px-4">
       <div className="flex  items-center relative w-3/4">
         <input
           type="text"

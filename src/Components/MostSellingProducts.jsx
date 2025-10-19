@@ -21,9 +21,8 @@ const MostSellingProducts = () => {
     }, []);
 
   return (
-    <div className="my-20">
+    <div className="mx-5">
       <div className="flex flex-col items-end px-8 py-4">
-        {" "}
         <h1 className="text-3xl font-extrabold">
           Most Selling Products
         </h1>

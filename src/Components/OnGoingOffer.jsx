@@ -4,6 +4,7 @@ import { FaAngleRight } from "react-icons/fa";
 import { motion } from "framer-motion";
 import axios from "axios";
 
+
 const OnGoingOffer = () => {
   const [offerPlants, setOfferPlants] = useState([]);
 
@@ -19,7 +20,8 @@ const OnGoingOffer = () => {
     fetchOffer();
   }, []);
   return (
-    <div>
+    <div className="">
+     
       <div className="py-4">
         <h1 className="text-3xl font-extrabold ">Offers on going</h1>
         <h1>Fresh Deals Blooming !</h1>

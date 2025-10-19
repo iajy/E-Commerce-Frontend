@@ -26,7 +26,7 @@ const ProductsForU = () => {
   }, []);
 
   return (
-    <div>
+    <div className="py-5">
       {loader && <Loader />}
       <div className="p-4 ">
         <h2 className=" text-center font-bold text-3xl">Products for YOU</h2>
@@ -35,7 +35,7 @@ const ProductsForU = () => {
           today
         </h2>
       </div>
-      <div className="grid md:grid-cols-3 grid-cols-2 place-items-center gap-10 bg-[#C1dcdc] p-3">
+      <div className="grid md:grid-cols-3 grid-cols-2 place-items-center gap-10 bg-[#C1dcdc] p-18">
         {products.map((plant) => (
           <div key={plant.id} className="md:w-3/4 w-2/2">
             <img
