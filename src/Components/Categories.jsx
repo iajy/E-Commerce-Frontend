@@ -1,6 +1,12 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Categories = () => {
+  const navigate = useNavigate();
+  const handleProduct = () => {
+    navigate("/products#productview");
+  };
+
   return (
     <div className=" flex flex-col gap-y-6 my-10">
       <div className="text-center md:my-10">
@@ -12,7 +18,7 @@ const Categories = () => {
           <div className="w-65 flex flex-col -my-74">
             {/* amaryllis-1984899_1280.jpg */}
             <img
-            src="https://cdn.pixabay.com/photo/2017/01/16/18/45/amaryllis-1984899_1280.jpg"
+              src="https://cdn.pixabay.com/photo/2017/01/16/18/45/amaryllis-1984899_1280.jpg"
               alt=""
               className=" rounded-xl"
             />
@@ -28,7 +34,10 @@ const Categories = () => {
           />
           <p className="font-bold">Plant Accessories</p>
           <p>Explore the Accessories here.</p>
-          <button className="px-3 py-2 bg-white rounded-sm">
+          <button
+            className="px-3 py-2 bg-white rounded-sm"
+            onClick={handleProduct}
+          >
             Explore &rarr;
           </button>
         </div>

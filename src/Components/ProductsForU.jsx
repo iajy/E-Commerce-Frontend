@@ -25,11 +25,12 @@ const ProductsForU = () => {
     fetchProducts();
   }, []);
 
+
   return (
-    <div className="py-5">
+    <div  className="py-5">
       {loader && <Loader />}
       <div className="p-4 ">
-        <h2 className=" text-center font-bold text-3xl">Products for YOU</h2>
+        <h2 className=" text-center font-bold text-3xl" id="productview">Products for YOU</h2>
         <h2 className="text-center">
           Turn your space into a green paradise — shop your favorite plants
           today

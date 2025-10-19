@@ -2,19 +2,20 @@ import React from "react";
 import { IoCloseOutline } from "react-icons/io5";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
+import Address from "./Address";
 
 const ProductView = ({ onExit, products, plantId }) => {
   const plant = products.find((p) => p.id === plantId);
 
   return (
     <div className="fixed inset-0 flex  justify-end bg-black/60 z-50">
-      <motion.div 
-      initial={{x:30,opacity:0}}
-      animate={{x:0,opacity:1}}
-      // exit={{x:30,opacity:0}}
-      transition={{duration:0.4}}
-      
-      className="w-full max-w-1/2 h-full p-8  bg-white rounded-l-2xl shadow-lg">
+      <motion.div
+        initial={{ x: 30, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        // exit={{x:30,opacity:0}}
+        transition={{ duration: 0.4 }}
+        className="w-full max-w-1/2 h-full p-8  bg-white rounded-l-2xl shadow-lg"
+      >
         <div className="flex justify-between ">
           <h1 className="text-2xl font-bold py-4">Plant Details</h1>
           <IoCloseOutline
@@ -96,18 +97,7 @@ const ProductView = ({ onExit, products, plantId }) => {
             </div>
             <br />
             <span className="text-2xl">Address</span>
-            <div>
-              <form action="" className="flex flex-col">
-                
-                  <input type="text" name="" id="" placeholder="Name" />
-                  <input type="text" placeholder="Phone" className="" />
-                  <input type="text" name="" id="" placeholder="Address" />
-                  <input type="number" name="" id="" placeholder="PINCODE" />
-                
-                
-              </form>
-            </div>
-
+            <Address />
             <br />
             <br />
           </div>
