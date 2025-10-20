@@ -2,7 +2,6 @@ import React from "react";
 import { IoCloseOutline } from "react-icons/io5";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
-import Address from "./Address";
 
 const ProductView = ({ onExit, products, plantId }) => {
   const plant = products.find((p) => p.id === plantId);
@@ -14,7 +13,7 @@ const ProductView = ({ onExit, products, plantId }) => {
         animate={{ x: 0, opacity: 1 }}
         // exit={{x:30,opacity:0}}
         transition={{ duration: 0.4 }}
-        className="w-full max-w-1/2 h-full p-8  bg-white rounded-l-2xl shadow-lg"
+        className="w-full max-w-1/2 h-full p-6  bg-white rounded-l-2xl shadow-lg"
       >
         <div className="flex justify-between ">
           <h1 className="text-2xl font-bold py-4">Plant Details</h1>
@@ -96,8 +95,59 @@ const ProductView = ({ onExit, products, plantId }) => {
               <span>{plant.offer === 0 ? <>Yes</> : <>No</>}</span>
             </div>
             <br />
-            <span className="text-2xl">Address</span>
-            <Address />
+            <span className="text-2xl">Feedback</span>
+            <div className="grid grid-cols-2 py-3 border px-2 border-gray-300">
+              <div className="">
+                <span className="flex flex-col">
+                  4.3 &#9734; <br />
+                  Ratings & Reviews
+                </span>
+                <button className="text-white bg-purple-500 px-2 py-1 rounded-sm my-2">Rate product</button>
+              </div>
+              <div>
+                <div className="flex w-full items-center">
+                  <label htmlFor="" className="">
+                    5&#9734;
+                  </label>
+                  <span className="border border-b-4 rounded-sm w-80 border-green-700"></span>
+                  <span className="border border-b-4 border-gray-400 rounded-r-sm w-20"></span>
+                  566
+                </div>
+                <div className="flex w-full items-center">
+                  <label htmlFor="" className="">
+                    4&#9734;
+                  </label>
+                  <span className="border border-b-4 rounded-sm w-50 border-green-700"></span>
+                  <span className="border border-b-4 border-gray-400 rounded-r-sm w-50"></span>
+                  67
+                </div>
+                <div className="flex w-full items-center">
+                  <label htmlFor="" className="">
+                    3&#9734;
+                  </label>
+                  <span className="border border-b-4 rounded-sm w-24 border-green-700"></span>
+                  <span className="border border-b-4 border-gray-400 rounded-r-sm w-76"></span>
+                  24
+                </div>
+                <div className="flex w-full items-center">
+                  <label htmlFor="" className="">
+                    2&#9734;
+                  </label>
+                  <span className="border border-b-4 rounded-sm w-6 border-orange-400"></span>
+                  <span className="border border-b-4 border-gray-400 rounded-r-sm w-94"></span>
+                  6
+                </div>
+                <div className="flex w-full items-center">
+                  <label htmlFor="" className="">
+                    1&#9734;
+                  </label>
+                  <span className="border border-b-4 rounded-sm w-4 border-red-700"></span>
+                  <span className="border border-b-4 border-gray-400 rounded-r-sm w-96"></span>
+                  4
+                </div>
+              </div>
+            </div>
+            {/* <Address /> */}
             <br />
             <br />
           </div>
