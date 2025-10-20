@@ -5,7 +5,7 @@ const Address = () => {
   const [addressEdit, setAddressEdit] = useState(true);
   const [address, setAddress] = useState([]);
 
-  const id = 1;
+  const id = localStorage.getItem("id");
 
   useEffect(() => {
     const fetchAddress = async () => {

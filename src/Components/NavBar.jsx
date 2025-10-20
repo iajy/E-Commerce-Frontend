@@ -11,7 +11,22 @@ const NavBar = () => {
 
   const [view, setView] = useState("");
 
-  const token =  localStorage("token");
+  const token = localStorage.getItem("token");
+  const name = localStorage.getItem("name");
+  const [sideBar, setSideBar] = useState(false);
+
+  const checkLogin = () => {
+    if (token) {
+      navigate("/products");
+    } else {
+      setView("login");
+    }
+  };
+
+  const handleLogout = () => {
+    localStorage.clear();
+    navigate("/");
+  };
 
   return (
     <header className="fixed  w-full z-50 bg-white flex justify-between items-center py-5 md:px-10 px-5 shadow-lg ">
@@ -29,7 +44,7 @@ const NavBar = () => {
           </li>
           <li
             className="hover:text-[#C1dcdc] cursor-pointer"
-            onClick={() => navigate("/products")}
+            onClick={checkLogin}
           >
             Products
           </li>
@@ -37,18 +52,34 @@ const NavBar = () => {
         </ul>
       </div>
       <div className="flex items-center gap-8 text-lg">
-        {/* <button > */}
         <IoCartOutline
           onClick={() => navigate("/mycart")}
           className="hover:text-[#C1dcdc] hidden md:flex"
         />
-        {/* </button> */}
-        <p>
-          <CgProfile
-            onClick={() => setView("login")}
-            className="hover:text-[#C1dcdc]"
-          />
-        </p>
+        {token ? (
+          <>
+            <div
+              className="text-[#90c0c0] font-semibold cursor-pointer"
+              onClick={() => setSideBar(!sideBar)}
+            >
+              {name}
+            </div>
+            {sideBar && (
+              <div className="absolute bg-white top-20 right-10 p-4 rounded-sm">
+                <p className="text-red-500" onClick={handleLogout}>
+                  Logout
+                </p>
+              </div>
+            )}
+          </>
+        ) : (
+          <p>
+            <CgProfile
+              onClick={() => setView("login")}
+              className="hover:text-[#C1dcdc]"
+            />
+          </p>
+        )}
         <p>
           <HiOutlineMenuAlt3 className="hover:text-[#C1dcdc] md:hidden" />
         </p>

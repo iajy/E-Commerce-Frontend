@@ -34,6 +34,9 @@ const SignUpPage = ({ onExit, onLogin }) => {
       const res = await axios.post("http://localhost:8080/saveuser", user);
       // if (res.status === 200) {
       toast.success("Logged In");
+      localStorage.setItem("token", res.data.token);
+      localStorage.setItem("id", res.data.user.id);
+      localStorage.setItem("name", res.data.user.name);
       console.log(res);
       onExit();
       // }
@@ -106,7 +109,7 @@ const SignUpPage = ({ onExit, onLogin }) => {
             } rounded-full p-3 focus:outline-none`}
           />
           <button className="flex justify-center items-center gap-2 bg-blue-600 px-6 py-3 rounded-full text-white font-medium cursor-pointer">
-            SignUp{loader && <Loader className=""/>}
+            SignUp{loader && <Loader className="" />}
           </button>
         </form>
         <div className="flex justify-around">

@@ -9,7 +9,6 @@ const LoginPage = ({ onExit, onSignUp }) => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    console.log("here the mail is", mail);
     try {
       const res = await axios.post(
         "http://localhost:8080/loginuser",
@@ -22,6 +21,8 @@ const LoginPage = ({ onExit, onSignUp }) => {
       const data = res.data;
       if (data.token) {
         localStorage.setItem("token", data.token);
+        localStorage.setItem("id", res.data.user.id);
+        localStorage.setItem("name", res.data.user.name);
         toast.success("loged In");
         onExit();
       } else {
