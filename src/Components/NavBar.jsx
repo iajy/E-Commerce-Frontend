@@ -11,6 +11,8 @@ const NavBar = () => {
 
   const [view, setView] = useState("");
 
+  const token =  localStorage("token");
+
   return (
     <header className="fixed  w-full z-50 bg-white flex justify-between items-center py-5 md:px-10 px-5 shadow-lg ">
       <div className="flex items-center gap-15">

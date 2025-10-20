@@ -5,15 +5,28 @@ import { IoCloseOutline } from "react-icons/io5";
 
 const LoginPage = ({ onExit, onSignUp }) => {
   const [password, setPassword] = useState("");
-  const [email,setEmail] =useState("");
+  const [mail, setMail] = useState("");
 
-  
   const handleLogin = async (e) => {
     e.preventDefault();
+    console.log("here the mail is", mail);
     try {
-      const res = await axios.post("http://localhost:8080/loginuser", {email,password});
-      toast.success("loged In");
+      const res = await axios.post(
+        "http://localhost:8080/loginuser",
+        { mail, password },
+        {
+          headers: { "Content-Type": "application/json" },
+        }
+      );
       console.log(res);
+      const data = res.data;
+      if (data.token) {
+        localStorage.setItem("token", data.token);
+        toast.success("loged In");
+        onExit();
+      } else {
+        toast.error(data.message);
+      }
     } catch (err) {
       console.error(err);
     }
@@ -37,11 +50,11 @@ const LoginPage = ({ onExit, onSignUp }) => {
         <form onSubmit={handleLogin} className="flex flex-col gap-4">
           <input
             type="text"
-            name="email"
+            name="mail"
             required
             // id=""
             placeholder="Enter your Email"
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(e) => setMail(e.target.value)}
             className="border border-[#C1DCDC]  rounded-full focus:outline-blue-600 focus:outline-1 p-3"
           />
           <input
