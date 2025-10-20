@@ -59,14 +59,14 @@ const NavBar = () => {
         {token ? (
           <>
             <div
-              className="text-[#90c0c0] font-semibold cursor-pointer"
+              className="cursor-pointer rounded-4xl px-3 py-1 bg-gray-50 shadow-md "
               onClick={() => setSideBar(!sideBar)}
             >
               {name}
             </div>
             {sideBar && (
               <div className="absolute bg-white top-20 right-10 p-4 rounded-sm">
-                <p className="text-red-500" onClick={handleLogout}>
+                <p className="text-red-500 cursor-pointer" onClick={handleLogout}>
                   Logout
                 </p>
               </div>

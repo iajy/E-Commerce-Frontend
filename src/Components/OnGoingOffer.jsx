@@ -53,7 +53,8 @@ const OnGoingOffer = () => {
                 <img
                 src={plant.image?.img1}
                   alt=""
-                  className="rounded-2xl right-2 bottom-2 object-cover md:w-1/4 w-3/4 md:h-65 h-50  "
+                  className="rounded-2xl right-2 bottom-2 object-cover md:w-1/4 w-3/4 md:h-65 h-50"
+                  
                 />
               </div>
             ))}

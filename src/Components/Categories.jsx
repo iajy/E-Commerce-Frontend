@@ -1,10 +1,15 @@
 import React from "react";
+import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 
 const Categories = () => {
   const navigate = useNavigate();
   const handleProduct = () => {
+    if(localStorage.getItem("token")){
     navigate("/products#productview");
+    }else{
+      toast.error("Login First");
+    }
   };
 
   return (

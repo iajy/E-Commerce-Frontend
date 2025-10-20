@@ -1,10 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import { IoCloseOutline } from "react-icons/io5";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
+import axios from "axios";
+import toast from "react-hot-toast";
 
 const ProductView = ({ onExit, products, plantId }) => {
   const plant = products.find((p) => p.id === plantId);
+
+  const id = localStorage.getItem("id");
+  const pId = plant.id;
+
+  const [cart, _] = useState({
+    user: { id: id },
+    plant: { id: pId },
+  });
+  const handleCart = async () => {
+    try {
+      const res = await axios.post("http://localhost:8080/addtocart", cart);
+      toast.success("Added to Cart");
+      console.log(res);
+    } catch (err) {
+      toast.error("Something went wrong");
+      console.error(err);
+    }
+  };
 
   return (
     <div className="fixed inset-0 flex  justify-end bg-black/60 z-50">
@@ -30,10 +50,13 @@ const ProductView = ({ onExit, products, plantId }) => {
               className="rounded-2xl shadow-2xl object-cover w-full md:h-110 h-60 hover:scale-150 transition-transform cursor-pointer"
             />
             <div className="flex gap-3">
-              <button className="p-3 text-md font-semibold bg-orange-500 text-white rounded-md">
+              <button
+                className="p-3 text-md font-semibold bg-orange-500 text-white rounded-md cursor-pointer"
+                onClick={handleCart}
+              >
                 ADD to Cart
               </button>
-              <button className="p-3 text-md font-semibold bg-blue-800 text-white rounded-md">
+              <button className="p-3 text-md font-semibold bg-blue-800 text-white rounded-md cursor-pointer">
                 Buy Now
               </button>
             </div>
@@ -102,7 +125,9 @@ const ProductView = ({ onExit, products, plantId }) => {
                   4.3 &#9734; <br />
                   Ratings & Reviews
                 </span>
-                <button className="text-white bg-purple-500 px-2 py-1 rounded-sm my-2">Rate product</button>
+                <button className="text-white bg-purple-500 px-2 py-1 rounded-sm my-2 cursor-pointer">
+                  Rate product
+                </button>
               </div>
               <div>
                 <div className="flex w-full items-center">
