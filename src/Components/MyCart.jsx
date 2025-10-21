@@ -9,19 +9,20 @@ const MyCart = () => {
   const [cartItems, setCartItems] = useState([]);
 
   useEffect(() => {
-    const fetchCart = async () => {
-      try {
-        const res = await axios.get(
-          `http://localhost:8080/getcartbyuserid/${id}`
-        );
-        console.log(res.data);
-        setCartItems(res.data);
-      } catch (err) {
-        console.error(err);
-      }
-    };
     fetchCart();
   }, [id]);
+
+  const fetchCart = async () => {
+    try {
+      const res = await axios.get(
+        `http://localhost:8080/getcartbyuserid/${id}`
+      );
+      console.log(res.data);
+      setCartItems(res.data);
+    } catch (err) {
+      console.error(err);
+    }
+  };
 
   const handleCount = async (cartId, value) => {
     try {
@@ -44,7 +45,7 @@ const MyCart = () => {
         `http://localhost:8080/deletecart/${cartId}`
       );
       console.log(res);
-      window.location.reload();
+      fetchCart();
     } catch (err) {
       console.log(err);
     }
@@ -127,41 +128,43 @@ const MyCart = () => {
               ))
             )}
           </div>
-          {cartItems.length !==0 && (<div className="flex flex-col mx-10">
-            <h1 className="text-2xl font-semibold mb-6">Price Details</h1>
-            <table className="text-lg">
-              <tbody className="">
-                <tr>
-                  <td>Prize({itemsCount} items)</td>
-                  <td>
-                    &#8377;
-                    {totalPrize * itemsCount}
-                  </td>
-                </tr>
-                <tr>
-                  <td>Discount</td>
-                  <td className="text-green-600">
-                    -&#8377;
-                    {discount * itemsCount}
-                  </td>
-                </tr>
-                <tr>
-                  <td>Total Amount</td>
-                  <td>
-                    &#8377;
-                    {totalPrize * itemsCount - discount * itemsCount}
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-            <span className="text-green-600">
-              You will save {discount * itemsCount} on this order
-            </span>
-          </div>)}
+          {cartItems.length !== 0 && (
+            <div className="flex flex-col mx-10">
+              <h1 className="text-2xl font-semibold mb-6">Price Details</h1>
+              <table className="text-lg">
+                <tbody className="">
+                  <tr>
+                    <td>Prize({itemsCount} items)</td>
+                    <td>
+                      &#8377;
+                      {totalPrize * itemsCount}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Discount</td>
+                    <td className="text-green-600">
+                      -&#8377;
+                      {discount * itemsCount}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Total Amount</td>
+                    <td>
+                      &#8377;
+                      {totalPrize * itemsCount - discount * itemsCount}
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <span className="text-green-600">
+                You will save {discount * itemsCount} on this order
+              </span>
+            </div>
+          )}
         </div>
         <div className="bg-white shadow-md p-6 rounded-2xl">
-          <h1 className="text-2xl font-semibold mb-6">Address</h1>
-          <p>Your Address...</p>
+          <h1 className="text-2xl font-semibold">Address</h1>
+          <p>Your plant will reach you in these address..</p>
           <Address />
         </div>
       </div>
