@@ -66,7 +66,8 @@ const ProductsForU = () => {
                   (Flowerpot is free)
                 </span>
               )}
-            </span>
+            </span><br />
+            <span className="text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
           </div>
         ))}
       </div>

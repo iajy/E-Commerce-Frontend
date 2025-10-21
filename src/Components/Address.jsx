@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 
 const Address = () => {
-  const [addressEdit, setAddressEdit] = useState(true);
+  const [addressEdit, setAddressEdit] = useState(false);
   const [address, setAddress] = useState([]);
 
   const id = localStorage.getItem("id");
