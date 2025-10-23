@@ -70,7 +70,7 @@ const MyCart = () => {
               cartItems.map((item) => (
                 <div
                   key={item.id}
-                  className="flex items-center justify-between border-b border-gray-300 py-4"
+                  className="flex items-center justify-between border-b border-gray-100 py-4"
                 >
                   <div className="flex items-center gap-4">
                     <div className="flex flex-col gap-3">

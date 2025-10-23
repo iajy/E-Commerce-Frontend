@@ -32,14 +32,19 @@ const SignUpPage = ({ onExit, onLogin }) => {
     try {
       setLoader(true);
       const res = await axios.post("http://localhost:8080/saveuser", user);
-      // if (res.status === 200) {
-      toast.success("Logged In");
-      localStorage.setItem("token", res.data.token);
-      localStorage.setItem("id", res.data.user.id);
-      localStorage.setItem("name", res.data.user.name);
-      console.log(res);
-      onExit();
-      // }
+      if (res.data.message === "Email already exits") {
+        console.log(res.data);
+        toast.error("Email already exits");
+        setLoader(false);
+        // onExit();
+      } else {
+        localStorage.setItem("token", res.data?.token);
+        localStorage.setItem("id", res.data.user?.id);
+        localStorage.setItem("name", res.data.user?.name);
+        toast.success("Logged In")
+        console.log(res);
+        onExit();
+      }
     } catch (error) {
       setLoader(false);
       toast.error("Mail already in Use");

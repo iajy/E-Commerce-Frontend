@@ -1,11 +1,13 @@
 import axios from "axios";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
+import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import { IoCloseOutline } from "react-icons/io5";
 
 const LoginPage = ({ onExit, onSignUp }) => {
   const [password, setPassword] = useState("");
   const [mail, setMail] = useState("");
+  const [passwordView, setPasswordView] = useState(false);
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -33,6 +35,18 @@ const LoginPage = ({ onExit, onSignUp }) => {
     }
   };
 
+  const handleForgotPassword = async (e) => {
+    e.preventDefault();
+    try {
+      await axios.post("http://localhost:8080/forgot-password", { mail });
+      toast.success("Reset link sent to your email");
+    } catch (err) {
+      console.log(err);
+      toast.error("Email not found");
+    }
+  };
+
+
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black/60 z-50">
       <div className="w-full max-w-xl absolute flex flex-col gap-4 p-8  bg-white rounded-2xl shadow-lg">
@@ -58,15 +72,27 @@ const LoginPage = ({ onExit, onSignUp }) => {
             onChange={(e) => setMail(e.target.value)}
             className="border border-[#C1DCDC]  rounded-full focus:outline-blue-600 focus:outline-1 p-3"
           />
-          <input
-            type="password"
-            name="password"
-            required
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            placeholder="Enter Password"
-            className="border border-[#C1DCDC] rounded-full focus:outline-blue-600 focus:outline-1 p-3"
-          />
+
+          <div className="relative flex">
+            <input
+              type={passwordView ? "text" : "password"}
+              name="password"
+              required
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Enter Password"
+              className="border w-full border-[#C1DCDC] rounded-full focus:outline-blue-600 focus:outline-1 p-3"
+            />
+            <div className="absolute right-4 top-4">
+              {passwordView ? (
+                <FaRegEyeSlash onClick={() => setPasswordView(!passwordView)} />
+              ) : (
+                <FaRegEye onClick={() => setPasswordView(!passwordView)} />
+              )}
+            </div>
+          </div>
+
+          <p className="text-gray-400 px-2 hover:text-blue-500 cursor-pointer" onClick={handleForgotPassword}>Forgot password ?</p>
 
           <button className="bg-blue-600 px-6 py-3 rounded-full text-white font-medium cursor-pointer">
             Login

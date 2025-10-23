@@ -6,6 +6,7 @@ import MyCart from "./Components/MyCart";
 import NavBar from "./Components/NavBar";
 import Products from "./Components/Products";
 import Footer from "./Components/Footer";
+import ResetPassword from "./Components/ResetPassword";
 
 const App = () => {
   return (
@@ -15,7 +16,8 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/mycart" element={<MyCart />} />
-        <Route path="products" element={<Products/>}/>
+        <Route path="/products" element={<Products/>}/>
+        <Route path="/reset-password/:token" element={<ResetPassword/>} />
       </Routes>
       <Footer/>
    </div>
