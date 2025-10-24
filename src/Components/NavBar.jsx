@@ -32,7 +32,7 @@ const NavBar = () => {
     <header className="fixed  w-full z-50 bg-white flex justify-between items-center py-5 md:px-10 px-5 shadow-lg ">
       <div className="flex items-center gap-15">
         {/* <p className="text-5xl font-bold">പൂ<span className="text-[#90c0c0]">ന്തോട്ടം</span></p > */}
-        <p className="text-5xl font-bold">
+        <p className="text-5xl font-bold cursor-pointer" onClick={()=>navigate("/")}>
           Plants<span className="text-[#90c0c0]">Land</span>
         </p>
         <ul className=" hidden md:flex gap-10">
@@ -54,7 +54,7 @@ const NavBar = () => {
       <div className="flex items-center gap-8 text-lg">
         <IoCartOutline
           onClick={() => navigate("/mycart")}
-          className="hover:text-[#C1dcdc] hidden md:flex"
+          className="hover:text-[#C1dcdc] hidden md:flex cursor-pointer"
         />
         {token ? (
           <>

@@ -3,11 +3,13 @@ import React, { useState } from "react";
 import toast from "react-hot-toast";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import { IoCloseOutline } from "react-icons/io5";
+import Loader from "./Loader";
 
 const LoginPage = ({ onExit, onSignUp }) => {
   const [password, setPassword] = useState("");
   const [mail, setMail] = useState("");
   const [passwordView, setPasswordView] = useState(false);
+  const [loader, setLoader] = useState(true);
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -37,15 +39,17 @@ const LoginPage = ({ onExit, onSignUp }) => {
 
   const handleForgotPassword = async (e) => {
     e.preventDefault();
+    setLoader(false);
+    toast.success("Wait few minutes mail will sent");
     try {
       await axios.post("http://localhost:8080/forgot-password", { mail });
       toast.success("Reset link sent to your email");
     } catch (err) {
+      setLoader(true);
       console.log(err);
       toast.error("Email not found");
     }
   };
-
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black/60 z-50">
@@ -92,7 +96,16 @@ const LoginPage = ({ onExit, onSignUp }) => {
             </div>
           </div>
 
-          <p className="text-gray-400 px-2 hover:text-blue-500 cursor-pointer" onClick={handleForgotPassword}>Forgot password ?</p>
+          {loader ? (
+            <p
+              className="text-gray-400 px-2 hover:text-blue-500 cursor-pointer"
+              onClick={handleForgotPassword}
+            >
+              Forgot password ?
+            </p>
+          ) : (
+            <Loader />
+          )}
 
           <button className="bg-blue-600 px-6 py-3 rounded-full text-white font-medium cursor-pointer">
             Login

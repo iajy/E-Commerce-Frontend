@@ -24,7 +24,7 @@ const Products = () => {
       <div className="flex flex-col py-26 mx-5">
         <SearchBar />
         <OnGoingOffer />
-        <MostSellingProducts />
+        {/* <MostSellingProducts /> */}
       </div>
       <ProductsForU id={"productview"}/>
     </>

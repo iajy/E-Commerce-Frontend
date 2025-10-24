@@ -114,7 +114,7 @@ const SignUpPage = ({ onExit, onLogin }) => {
             } rounded-full p-3 focus:outline-none`}
           />
           <button className="flex justify-center items-center gap-2 bg-blue-600 px-6 py-3 rounded-full text-white font-medium cursor-pointer">
-            SignUp{loader && <Loader className="" />}
+            SignUp{loader && <Loader />}
           </button>
         </form>
         <div className="flex justify-around">
